@@ -9,8 +9,11 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.11.00"
 
-mockito-core = "5.7.0"
-mockito-inline = "3.5.15"
+#mockito-core = "5.7.0"
+#mockito-inline = "3.5.15"
+
+mockk = "1.13.3"
+mockk-android = "1.13.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,8 +31,11 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
-mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
-mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockito-inline" }
+#mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
+#mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockito-inline" }
+
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk-android" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
