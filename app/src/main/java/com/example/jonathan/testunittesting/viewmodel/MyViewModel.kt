@@ -1,17 +1,15 @@
 package com.example.jonathan.testunittesting.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.example.jonathan.testunittesting.model.MyRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 private const val TAG = "TUT: MyViewModel"
 
-class MyViewModel : ViewModel() {
-    private val repository = MyRepository()
-
-    private val _data = MutableStateFlow("")
+// TODO: Any concerns on not using ViewModel?
+class MyViewModel(private val repository: MyRepository) {
+    private val _data = MutableStateFlow("Default data........")
     val data: StateFlow<String> = _data
     
     fun getData() {

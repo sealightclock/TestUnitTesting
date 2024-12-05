@@ -3,7 +3,7 @@ package com.example.jonathan.testunittesting
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.lifecycle.ViewModelProvider
+import com.example.jonathan.testunittesting.model.MyRepository
 import com.example.jonathan.testunittesting.ui.theme.TestUnitTestingTheme
 import com.example.jonathan.testunittesting.view.MyView
 import com.example.jonathan.testunittesting.viewmodel.MyViewModel
@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[MyViewModel::class.java]
+        // TODO: Any concerns about not using ViewModelProvider?
+        viewModel = MyViewModel(MyRepository())
         viewModel.getData()
 
         setContent {

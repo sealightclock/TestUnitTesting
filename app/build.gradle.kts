@@ -63,4 +63,9 @@ dependencies {
 
     testImplementation (libs.mockk) // for regular unit tests
     androidTestImplementation(libs.mockk.android)  // for Android-specific tests
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
+    testImplementation("io.insert-koin:koin-test:3.5.0")
 }
