@@ -7,6 +7,7 @@ import com.example.jonathan.testunittesting.model.MyRepository
 import com.example.jonathan.testunittesting.ui.theme.TestUnitTestingTheme
 import com.example.jonathan.testunittesting.view.MyView
 import com.example.jonathan.testunittesting.viewmodel.MyViewModel
+import com.example.jonathan.testunittesting.viewmodel.MyViewModelFactory
 
 class MainActivity : ComponentActivity() {
     private lateinit var viewModel: MyViewModel
@@ -14,8 +15,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Any concerns about not using ViewModelProvider?
-        viewModel = MyViewModel(MyRepository())
+        // TODO: Which one is better?:
+        //viewModel = MyViewModel(MyRepository())
+        viewModel = MyViewModelFactory(MyRepository()).create(MyViewModel::class.java)
+
         viewModel.getData()
 
         setContent {
